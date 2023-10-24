@@ -73,6 +73,18 @@ const ContextMenu: React.FC = () => {
     return () => window.removeEventListener('keydown', keyHandler);
   }, [visible]);
 
+  useEffect(() => {
+    const close = (e: KeyboardEvent) => {
+      if (e.code === "Escape" && visible) {
+        setVisible(false);
+        fetchNui('radialClose');
+      }
+    }
+    window.addEventListener('keydown', close)
+
+    return () => window.removeEventListener('keydown', close)
+  }, [visible]);
+
   useNuiEvent('hideContext', () => setVisible(false));
 
   useNuiEvent<ContextMenuProps>('showContext', async (data) => {
