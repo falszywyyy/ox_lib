@@ -4,13 +4,16 @@ import { useNuiEvent } from '../../hooks/useNuiEvent';
 import { fetchNui } from '../../utils/fetchNui';
 import ScaleFade from '../../transitions/ScaleFade';
 import type { ProgressbarProps } from '../../typings';
+import { getDefaultFormatCodeSettings } from 'typescript';
 
 const useStyles = createStyles((theme) => ({
   container: {
+    position: 'relative',
     width: 350,
-    height: 45,
-    borderRadius: theme.radius.sm,
-    backgroundColor: theme.colors.dark[5],
+    height: 35,
+    borderRadius: 2,
+    backgroundColor: 'rgb(6, 6, 6, 0.2)',
+    backdropFilter: 'blur(25px)',
     overflow: 'hidden',
   },
   wrapper: {
@@ -24,13 +27,13 @@ const useStyles = createStyles((theme) => ({
   },
   bar: {
     height: '100%',
-    backgroundColor: theme.colors[theme.primaryColor][theme.fn.primaryShade()],
+    backgroundColor: 'var(--mainColor)',
   },
   labelWrapper: {
     position: 'absolute',
     display: 'flex',
-    width: 350,
-    height: 45,
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -40,9 +43,8 @@ const useStyles = createStyles((theme) => ({
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
-    fontSize: 20,
-    color: theme.colors.gray[3],
-    textShadow: theme.shadows.sm,
+    fontSize: 15,
+    color: '#fff'
   },
 }));
 

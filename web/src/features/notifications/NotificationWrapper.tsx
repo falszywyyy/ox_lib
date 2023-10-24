@@ -11,7 +11,7 @@ const useStyles = createStyles((theme) => ({
   container: {
     width: 300,
     height: 'fit-content',
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: 'var(--mainColor)',
     color: theme.colors.dark[0],
     padding: 12,
     borderRadius: theme.radius.sm,

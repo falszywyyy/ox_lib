@@ -30,10 +30,10 @@ const useStyles = createStyles((theme) => ({
   titleContainer: {
     borderRadius: 4,
     flex: '1 85%',
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: 'rgb(0, 0, 0, 1)',
   },
   titleText: {
-    color: theme.colors.dark[0],
+    color: '#fff',
     padding: 6,
     textAlign: 'center',
   },

@@ -15,11 +15,11 @@ const useStyles = createStyles((theme) => ({
     transform: 'translate(-50%, -50%)',
   },
   sector: {
-    fill: theme.colors.dark[6],
+    fill: 'rgb(0, 0, 0, 0.8)',
     color: theme.colors.dark[0],
 
     '&:hover': {
-      fill: theme.fn.primaryColor(),
+      fill: 'var(--mainColor)',
       '> g > text, > g > svg > path': {
         fill: '#fff',
       },
@@ -29,13 +29,11 @@ const useStyles = createStyles((theme) => ({
     },
   },
   backgroundCircle: {
-    fill: theme.colors.dark[6],
+    fill: 'transparent',
   },
   centerCircle: {
-    fill: theme.fn.primaryColor(),
+    fill: 'black',
     color: '#fff',
-    stroke: theme.colors.dark[6],
-    strokeWidth: 4,
     '&:hover': {
       fill: theme.colors[theme.primaryColor][theme.fn.primaryShade() - 1],
     },
@@ -67,6 +65,18 @@ const RadialMenu: React.FC = () => {
     sub: false,
     page: 1,
   });
+
+  useEffect(() => {
+    const close = (e: KeyboardEvent) => {
+        if (e.code === "Escape" && visible) {
+            setVisible(false);
+            fetchNui('radialClose');
+        }
+    }
+    window.addEventListener('keydown', close)
+
+    return () => window.removeEventListener('keydown', close)
+  }, [visible]);
 
   const changePage = async (increment?: boolean) => {
     setVisible(false);

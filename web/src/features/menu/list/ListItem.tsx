@@ -16,14 +16,15 @@ interface Props {
 
 const useStyles = createStyles((theme, params: { iconColor?: string }) => ({
   buttonContainer: {
-    backgroundColor: theme.colors.dark[6],
+    backgroundColor: 'var(--mainColor)',
     borderRadius: theme.radius.md,
     padding: 2,
     height: 60,
     scrollMargin: 8,
     '&:focus': {
-      backgroundColor: theme.colors.dark[4],
+      backgroundColor: 'var(--mainColor)',
       outline: 'none',
+      opacity: .8,
     },
   },
   iconImage: {
@@ -123,7 +124,7 @@ const ListItem = forwardRef<Array<HTMLDivElement | null>, Props>(({ item, index,
             <Progress
               value={item.progress}
               color={item.colorScheme || 'dark.0'}
-              styles={(theme) => ({ root: { backgroundColor: theme.colors.dark[3] } })}
+              styles={(theme) => ({ root: { backgroundColor: 'var(--mainColor)' } })}
             />
           </Stack>
         ) : (

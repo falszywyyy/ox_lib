@@ -20,6 +20,10 @@ import { useConfig } from './providers/ConfigProvider';
 const App: React.FC = () => {
   const { config } = useConfig();
 
+  useNuiEvent('changeColor', (data) => {
+    document.body.style.setProperty('--mainColor', data)
+  });
+
   useNuiEvent('setClipboard', (data: string) => {
     setClipboard(data);
   });

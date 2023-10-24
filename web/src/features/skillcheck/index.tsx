@@ -29,7 +29,7 @@ const useStyles = createStyles((theme) => ({
   },
   skillArea: {
     fill: 'transparent',
-    stroke: theme.fn.primaryColor(),
+    stroke: 'var(--mainColor)',
     strokeWidth: 8,
   },
   indicator: {
@@ -42,7 +42,7 @@ const useStyles = createStyles((theme) => ({
     left: '50%',
     top: '50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: theme.colors.dark[5],
+    backgroundColor: 'var(--mainColor)',
     width: 25,
     height: 25,
     textAlign: 'center',

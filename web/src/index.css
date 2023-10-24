@@ -20,6 +20,7 @@ body {
   height: 100vh;
   user-select: none;
   overflow: hidden !important;
+  --mainColor: #2495ff;
 }
 
 p {

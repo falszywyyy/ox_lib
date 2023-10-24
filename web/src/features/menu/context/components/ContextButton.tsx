@@ -21,26 +21,32 @@ const useStyles = createStyles((theme, params: { disabled?: boolean; readOnly?: 
   },
   label: {
     width: '100%',
-    color: params.disabled ? theme.colors.dark[3] : theme.colors.dark[0],
+    color: 'white',
     whiteSpace: 'pre-wrap',
   },
   button: {
     height: 'fit-content',
     width: '100%',
     padding: 10,
+    backgroundColor: 'rgb(0, 0, 0, 0.8)',
     '&:hover': {
-      backgroundColor: params.readOnly ? theme.colors.dark[6] : undefined,
+      backgroundColor: params.readOnly ? 'var(--mainColor)' : undefined,
       cursor: params.readOnly ? 'unset' : 'pointer',
     },
     '&:active': {
       transform: params.readOnly ? 'unset' : undefined,
     },
+    '&:disabled': {
+      opacity: .6,
+      backgroundColor: 'rgb(0, 0, 0, 0.8)',
+      color: '#ffffff !important',
+    }
   },
   iconImage: {
     maxWidth: '25px',
   },
   description: {
-    color: params.disabled ? theme.colors.dark[3] : theme.colors.dark[2],
+    color: theme.colors.dark[2],
     fontSize: 12,
   },
   dropdown: {
