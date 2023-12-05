@@ -12,8 +12,7 @@ const useStyles = createStyles((theme) => ({
     width: 350,
     height: 35,
     borderRadius: 2,
-    backgroundColor: 'rgb(6, 6, 6, 0.2)',
-    backdropFilter: 'blur(25px)',
+    backgroundColor: 'rgb(0, 0, 0, 0.8)',
     overflow: 'hidden',
   },
   wrapper: {

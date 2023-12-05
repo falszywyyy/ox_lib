@@ -35,7 +35,7 @@ const useStyles = createStyles((theme) => ({
     fill: 'black',
     color: '#fff',
     '&:hover': {
-      fill: theme.colors[theme.primaryColor][theme.fn.primaryShade() - 1],
+      fill: 'var(--mainColor)',
     },
   },
   centerIconContainer: {
